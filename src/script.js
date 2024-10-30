@@ -73,6 +73,7 @@ scene.add(camera)
 // Controls
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
+controls.enableZoom = false // Disable zoom
 
 /**
  * Renderer
