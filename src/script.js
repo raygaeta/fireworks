@@ -167,6 +167,7 @@ const createRandomFireworks = () =>
 
 createRandomFireworks()
 window.addEventListener('click', createRandomFireworks)
+window.addEventListener('touchstart', createRandomFireworks)
 
 const tick = () =>
 {
