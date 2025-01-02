@@ -88,8 +88,11 @@ renderer.setPixelRatio(sizes.pixelRatio)
 /**
  * Fireworks
  */
+const fireworkText = document.getElementById('firework-text');
+
 const createFirework = (count, position, size, texture, radius ) => 
 {
+
     const positions = new Float32Array(count * 3)
     const sizesArray = new Float32Array(count)
     const timeMultiplierArray = new Float32Array(count)
