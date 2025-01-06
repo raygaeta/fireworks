@@ -1,4 +1,6 @@
-# Three.js Journey
+# Creative Coding Challenge
+
+### An interactive experience written with OpenGL Shading Language (GLSL) and math functions to imitate randomness, twinkling, and fading.
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
