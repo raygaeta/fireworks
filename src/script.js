@@ -10,7 +10,6 @@ import fireworkFragmentShader from './shaders/fragment.glsl'
  * Base
  */
 // Debug
-// Debug
 const gui = new GUI({ width: 180 });
 gui.domElement.style.position = 'absolute';
 gui.domElement.style.left = '50%';
@@ -176,7 +175,20 @@ const createRandomFirework = () =>
     createFirework(count, position, size, texture, radius, color)
 }
 
-createRandomFirework()
+// React to touch events on mobile
+document.addEventListener('touchstart', (event) =>
+{
+    event.preventDefault();
+    const touch = event.touches[0];
+    const mouse = new THREE.Vector2();
+    mouse.x = (touch.clientX / renderer.domElement.clientWidth) * 2 - 1;
+    mouse.y = -(touch.clientY / renderer.domElement.clientHeight) * 2 + 1;
+    const raycaster = new THREE.Raycaster();
+    const intersects = raycaster.intersectObjects(scene.children, true);
+    if (intersects.length > 0) {
+        createRandomFirework();
+    }
+});
 
 window.addEventListener('click', createRandomFirework)
 
